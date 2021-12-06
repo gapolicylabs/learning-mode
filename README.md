@@ -1,4 +1,4 @@
-# Georgia Public Schools' Learning Mode During SY 2020-21
+# Georgia Schools' Learning Mode During SY 2020-21
 
 ## Introduction
 
