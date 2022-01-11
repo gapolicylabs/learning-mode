@@ -2,14 +2,9 @@
 
 clear all
 
-// SET MACROS
-
-global Input "C:/Users/Thomas/Dropbox (GSU Dropbox)/Georgia Policy Labs/(4) CFPL/(2) Projects/Active/P-EBT/Survey/03_Public/02_Data Original"
-global Output "C:/Users/Thomas/Dropbox (GSU Dropbox)/Georgia Policy Labs/(4) CFPL/(2) Projects/Active/P-EBT/Survey/03_Public/03_Data Derived"
-
 // IMPORT DATA
 
-import excel "${Input}/Schools by Districts.xlsx", firstrow
+import excel "02_Data Original/Schools by Districts.xlsx", firstrow
 
 // DROP UNNEEDED VARIABLES
 
@@ -67,6 +62,11 @@ replace grade_level = 6 if  (regexm(grade, "01-12") | regexm(grade, "03-12") | r
                             regexm(grade, "KK-12") | regexm(grade, "PK-09") | regexm(grade, "PK-12")) & ///
                             missing(grade_level)
 
+// FIX GRADE
+
+replace grade = substr(grade, 1, 5)
+replace grade = subinstr(grade, "-", "--", .)
+
 // LABEL VARIABLES
 
 label var grade_level "Grade Level"
@@ -85,4 +85,4 @@ label values grade_level grade_level
 
 sort district_id school_id
 compress
-save "${Output}/04_Schools by School Type.dta", replace
+save "03_Data Derived/04_Schools by School Type.dta", replace

@@ -9,16 +9,16 @@ global Output "C:/Users/tgoldring/Dropbox (GSU Dropbox)/Georgia Policy Labs/(4) 
 
 // LOAD DATA
 
-use "${Input}/04_Schools by School Type.dta"
+use "03_Data Derived/04_Schools by School Type.dta"
 
 // MERGE ON LEARNING MODE DATA USING DISTRICT AND ASSIGNED GRADE LEVEL (EL/MI/HI/ELMI/MIHI/ELMIHI)
 
-merge m:1 district grade_level using "${Input}/03_All Districts by School Type.dta", keep(1 3) nogen
+merge m:1 district grade_level using "03_Data Derived/03_All Districts by School Type.dta", keep(1 3) nogen
 
 // MERGE IN FULTON DATA
 // Fulton learning data varied across schools and is processed in a separate do file
 
-merge 1:1 district_id school_id using "${Input}/06_Fulton Learning Mode.dta", nogen
+merge 1:1 district_id school_id using "03_Data Derived/06_Fulton Learning Mode.dta", nogen
 
 forval x = 1/10 {
   replace mode_`x' = mode`x' if district_id == 660
@@ -27,7 +27,7 @@ forval x = 1/10 {
 
 // MERGE IN BARROW DATA
 
-merge 1:1 district_id school_id using "${Input}/07_Barrow Learning Mode.dta", nogen
+merge 1:1 district_id school_id using "03_Data Derived/07_Barrow Learning Mode.dta", nogen
 
 forval x = 1/10 {
   replace mode_`x' = mode`x' if district_id == 607
@@ -36,9 +36,20 @@ forval x = 1/10 {
   drop days`x'
 }
 
+// MERGE IN LEE DATA
+
+merge 1:1 district_id school_id using "03_Data Derived/08_Lee Learning Mode.dta", nogen
+
+forval x = 1/10 {
+  replace mode_`x' = mode`x' if district_id == 688
+  replace days_`x' = days`x' if district_id == 688
+  drop mode`x'
+  drop days`x'
+}
+
 // MERGE IN SCHOOLS FOR THE DEAF OR BLIND DATA
 
-merge 1:1 district_id school_id using "${Input}/08_Schools for the Deaf or Blind Learning Mode.dta", nogen
+merge 1:1 district_id school_id using "03_Data Derived/09_Schools for the Deaf or Blind Learning Mode.dta", nogen
 
 forval x = 1/10 {
   replace mode_`x' = mode`x' if district_id == 799
@@ -49,7 +60,7 @@ forval x = 1/10 {
 
 // APPEND MILITARY SCHOOLS
 
-append using "${Input}/05_Military Schools.dta"
+append using "03_Data Derived/05_Military Schools.dta"
 
 // CLEAN VARIABLES
 
@@ -106,8 +117,9 @@ order district_id district school_id school grade scheduled_start actual_start
 
 // SORT & SAVE
 
+drop survey_date
 sort district_id school_id
 compress
-save "${Output}/GA School Learning Mode_SY 2020-21.dta", replace
+save "04_Output/GA School Learning Mode_SY 2020-21.dta", replace
 
-export delimited "${Output}/GA School Learning Mode_SY 2020-21.csv", replace
+export delimited "04_Output/GA School Learning Mode_SY 2020-21.csv", replace

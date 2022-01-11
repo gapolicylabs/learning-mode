@@ -2,14 +2,9 @@
 
 clear all
 
-// SET MACROS
-
-global Input "C:/Users/Thomas/Dropbox (GSU Dropbox)/Georgia Policy Labs/(4) CFPL/(2) Projects/Active/P-EBT/Survey/03_Public/02_Data Original"
-global Output "C:/Users/Thomas/Dropbox (GSU Dropbox)/Georgia Policy Labs/(4) CFPL/(2) Projects/Active/P-EBT/Survey/03_Public/03_Data Derived"
-
 // IMPORT DATA
 
-import excel "${Input}/Learning Mode Survey.xlsx", sheet("P-EBT Survey") firstrow
+import excel "02_Data Original/Learning Mode Survey.xlsx", sheet("P-EBT Survey") firstrow
 
 // ENCODE VARIABLES
 
@@ -74,4 +69,4 @@ order district survey_date scheduled_start actual_start reduced_ops school_vars 
 
 sort district
 compress
-save "${Output}/01_Import Survey.dta", replace
+save "03_Data Derived/01_Import Survey.dta", replace

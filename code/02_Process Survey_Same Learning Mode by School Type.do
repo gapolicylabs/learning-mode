@@ -2,14 +2,9 @@
 
 clear all
 
-// SET MACROS
-
-global Input "C:/Users/Thomas/Dropbox (GSU Dropbox)/Georgia Policy Labs/(4) CFPL/(2) Projects/Active/P-EBT/Survey/03_Public/03_Data Derived"
-global Output "C:/Users/Thomas/Dropbox (GSU Dropbox)/Georgia Policy Labs/(4) CFPL/(2) Projects/Active/P-EBT/Survey/03_Public/03_Data Derived"
-
 // LOAD DATA
 
-use "${Input}/01_Import Survey.dta"
+use "03_Data Derived/01_Import Survey.dta"
 
 // FILTER DISTRICTS
 // Keep districts that were always in-person or that followed the same mode across all schools 

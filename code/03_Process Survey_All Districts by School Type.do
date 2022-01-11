@@ -2,14 +2,9 @@
 
 clear all
 
-// SET MACROS
-
-global Input "C:/Users/Thomas/Dropbox (GSU Dropbox)/Georgia Policy Labs/(4) CFPL/(2) Projects/Active/P-EBT/Survey/03_Public/03_Data Derived"
-global Output "C:/Users/Thomas/Dropbox (GSU Dropbox)/Georgia Policy Labs/(4) CFPL/(2) Projects/Active/P-EBT/Survey/03_Public/03_Data Derived"
-
 // LOAD DATA
 
-use "${Input}/01_Import Survey.dta"
+use "03_Data Derived/01_Import Survey.dta"
 
 // DROP DISTRICTS
 // Keep districts that used different learning modes across all schools 
@@ -60,7 +55,7 @@ replace mode_2 = 3 if district == "State Charter Schools II- Academy For Classic
 
 // APPEND SCHOOLS WITH SAME LEARNING MODE BY SCHOOL TYPE
 
-append using "${Input}/02_Same Learning Mode by School Type.dta"
+append using "03_Data Derived/02_Same Learning Mode by School Type.dta"
 
 // SORT & SAVE
 
