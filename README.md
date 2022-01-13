@@ -33,6 +33,11 @@ Learning mode:
 
 | Variable           | Label                                 |
 | --- | --- |
+| district_id        | District ID                           |
+| district           | District name                         |
+| school_id          | School ID                             |
+| school             | School name                           |
+| grade              | Grades taught                         |
 | scheduled_start    | Scheduled start date for SY 2020-21   |
 | actual_start       | Actual start date for SY 2020-21      |
 | mode_1             | Predominant learning mode in Aug 2020 |
