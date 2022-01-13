@@ -4,7 +4,7 @@
 
 This repository contains monthly learning mode data for public schools in Georgia during the 2020-21 school year (SY). The data were originally collected via a statewide survey to administer [Pandemic-EBT (P-EBT)](https://dfcs.georgia.gov/pandemic-electronic-benefit-transfer) benefits to eligible Georgia students and families. The source of the learning mode data were leaders and administrators from school districts and public charter schools in Georgia.
 
-These publicly-available data provide the first comprehensive view of monthly learning modes by school in Georgia during SY 2020-21. The data have been cleaned but no systematic attempt has been made by the Georgia Policy Labs to verify that the learning mode data submitted by the districts was accurate.
+These publicly-available data provide the first comprehensive view of monthly learning modes by school in Georgia during SY 2020-21. The data have been cleaned but **_no systematic attempt has been made by the Georgia Policy Labs to verify that the learning mode data submitted by the districts was accurate_**.
 
 ## Learning Mode Survey
 
