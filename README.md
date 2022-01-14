@@ -63,4 +63,4 @@ Learning mode:
 
 ## Acknowledgments
 
-The learning mode survey was designed and administered by the [Georgia Health Policy Center (GHPC)](https://ghpc.gsu.edu/) and the [Georgia Policy Labs (GPL)](https://gpl.gsu.edu/) at the [Andrew Young School of Policy Studies](https://aysps.gsu.edu/) at [Georgia State University](https://www.gsu.edu/). Debbie Kibbe and Molly Morris from GHPC and Thomas Goldring and Maggie Reeves from GPL contributed to the data collection. Sincere thanks to the many district administrators across Georgia who took the time to respond to the survey.
+The learning mode survey was designed and administered by the [Georgia Health Policy Center (GHPC)](https://ghpc.gsu.edu/) and the [Georgia Policy Labs (GPL)](https://gpl.gsu.edu/) at the [Andrew Young School of Policy Studies](https://aysps.gsu.edu/) at [Georgia State University](https://www.gsu.edu/). Debbie Kibbe and Molly Morris from GHPC and Thomas Goldring and Maggie Reeves from GPL contributed to the data collection. We thank the many district administrators across Georgia who took the time to respond to the survey.
